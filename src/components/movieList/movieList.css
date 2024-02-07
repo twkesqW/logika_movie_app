@@ -1,0 +1,52 @@
+.movie__list {
+    padding: 0 3rem 3rem 3rem;  
+}
+
+.list__title {
+    font-size: 2rem;
+    margin:  2rem 0 1rem 0;
+    font-weight: bolder;
+}
+
+.list__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+
+.list__title_cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.beauty__subtitle{
+    font-style: italic;
+    font-size: 1.25rem;
+}
+
+.nav_btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.hide{
+    opacity: 0;
+}
+
+.page_text{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.trend_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

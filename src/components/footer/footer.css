@@ -1,0 +1,151 @@
+.footer{
+    width: 100%;
+    padding: 6rem 0;
+    background-color: rgba(19,19,19,0.8);
+}
+
+.footer-container{
+    max-width: 1140px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+}
+
+.left{
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.location{
+    display: flex;
+    margin-bottom: 0.8rem;
+}
+
+.location p{
+    line-height: 30px;
+}
+
+
+
+
+.right{
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/*.social{*/
+/*    margin-top: 1rem;*/
+/*}*/
+
+
+.social {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    height: 50px;
+    width: 200px;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.social::before, .social::after {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    transition: 0.25s linear;
+    z-index: 1;
+}
+
+.social::before {
+    content: "";
+    left: 0;
+    justify-content: flex-end;
+    background-color: black;
+}
+
+.social::after {
+    content: "";
+    right: 0;
+    justify-content: flex-start;
+    background-color: black;
+}
+
+.social:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.social:hover span {
+    opacity: 0;
+    z-index: -3;
+}
+
+.social:hover::before {
+    opacity: 0.5;
+    transform: translateY(-101%);
+}
+
+.social:hover::after {
+    opacity: 0.5;
+    transform: translateY(101%);
+}
+
+.social span {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color:whitesmoke;
+    font-family: 'Fira Mono', monospace;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.25s;
+    z-index: 2;
+}
+
+.social .social-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+h4{
+    font-size: 1.4rem;
+    padding-top: 1.5rem;
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 640px){
+    .footer-container{
+        grid-template-columns: 1fr;
+    }
+}
