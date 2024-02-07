@@ -11,7 +11,7 @@ const Home = () => {
     const [trendingMovies,setTrendingMovies] = useState([])
     const [search,setSearch] = useState()
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/movies/popular/1")
+        fetch("https://movie-server-twk.netlify.app/movies/popular/1")
         .then(res => res.json())
         .then(data => setPopularMovies(data.results))
 
