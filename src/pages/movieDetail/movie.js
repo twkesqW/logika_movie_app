@@ -1,17 +1,18 @@
 import React, {useEffect, useState} from "react"
 import "./movie.css"
 import { useParams } from "react-router-dom"
-import classNames from "classnames"
 const Movie = () => {
     const [currentMovieDetail, setMovie] = useState()
     const { id } = useParams()
     const [trailer, setTrailer] = useState()
+
     useEffect(() => {
         getTrailer()
         getData()     
         window.scrollTo(0,0)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    // https://api.themoviedb.org/3/movie/${id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=uk-UA&include_video=true
+
     const getData = () => {
         fetch(`http://127.0.0.1:8000/movie/${id}`)
         .then(res => res.json())

@@ -1,5 +1,5 @@
 {
-  "name": "imdb-fe",
+  "name": "movie_app_logika",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -26,7 +26,11 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "off"
+    }
   },
   "browserslist": {
     "production": [
