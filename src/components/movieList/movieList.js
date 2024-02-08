@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect, useRef, useState} from "react"
 import "./movieList.css"
 import { useParams } from "react-router-dom"
 import Cards from "../card/card"
@@ -8,12 +8,11 @@ import classNames from "classnames"
 const MovieList = () => {
     
     const [movieList, setMovieList] = useState([])
-    const [page,setPage] = useState(1)
+    const page = useRef(1);
     const {type} = useParams()
-
     useEffect(() => {
         getData()
-            // eslint-disable-next-line react-hooks/exhaustive-deps
+          // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
@@ -23,7 +22,7 @@ const MovieList = () => {
     }, [type])
 
     const getData = () => {
-        fetch(`http://127.0.0.1:8000/movies/${type}/${page}`)
+        fetch(`http://127.0.0.1:8000/movies/${type}/${page.current}`)
         .then(res => res.json())
         .then(data => {setMovieList(data.results)
         })
@@ -31,13 +30,13 @@ const MovieList = () => {
 
     const increasePage = () =>{
         setMovieList([])
-        setPage(page+1)
+        page.current = page.current+1
         getData()
         window.scrollTo(0,0)
     }
     const decreasePage = () =>{
         setMovieList([])
-        setPage(page-1)
+        page.current = page.current - 1
         getData()
         window.scrollTo(0,0)
     }
@@ -57,7 +56,7 @@ const MovieList = () => {
                 <FaArrowLeft size={30} onClick={decreasePage} className={classNames({
                     "hide":page === 1
                 })}/>
-                <h2 className="page_text">{page} сторінка</h2>
+                <h2 className="page_text">{page.current} сторінка</h2>
                 <FaArrowRight size={30} onClick={increasePage}/>
             </div>
         </div>
